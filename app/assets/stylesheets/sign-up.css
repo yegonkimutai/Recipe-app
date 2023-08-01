@@ -1,21 +1,20 @@
 .signup-title {
   font-size: 3rem;
 }
-  
+
 .signup-cont {
   display: grid;
   justify-content: center;
   align-items: center;
 }
-  
+
 .input {
   width: 100%;
   height: 1.5rem;
 }
-  
+
 .action {
   width: 5rem;
   margin-top: 1rem;
   height: 2rem;
 }
-  
