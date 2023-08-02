@@ -9,4 +9,5 @@ Rails.application.routes.draw do
 
   resources :foods, except: [:update]
   resources :recipes, except: [:update]
+  get '/public_recipes', to: 'recipes#public_recipes'
 end
