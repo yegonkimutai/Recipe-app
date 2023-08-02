@@ -1,0 +1,15 @@
+
+<h1>My Recipes</h1>
+<%= link_to 'Add Recipe', '/recipes/new'%>
+
+<% if @recipes.length.positive?%>
+  <% @recipes.each do |recipe|  %>
+  <div>
+    <p><%= link_to "#{recipe.name}", recipe_path(recipe.id) %></p>
+    <p><%= recipe.description%></p>
+    <p><%= button_to "delete", recipe_path(recipe.id), method: :delete %></p>
+    <% end %>
+  </div>
+<% else %>
+  <p>No Recipes to show. Add a recipe from the button above</p>
+<% end %>
