@@ -1,10 +1,5 @@
-<% @recipes.each do |recipe| %>
-    <%= link_to user_recipe_path(@user, recipe.id), class: 'recipe-item' do %>
-      <div class="recipe">
-        <div>
-          <h3><%= recipe.name %></h3>
-          <p><%= recipe.desc.split(" ")[0..80].join(" ") %></p>
-        </div>
-      </div>
-    <% end %>
-  <% end %>
+<h2>My Recipes</h2>
+
+
+<button class="add-recipe-btn"><%= link_to 'Add Recipe', '/recipes/new' %></button>
+
