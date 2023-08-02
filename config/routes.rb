@@ -8,6 +8,11 @@ Rails.application.routes.draw do
   # end
 
   resources :foods, except: [:update]
-  resources :recipes, except: [:update]
+  resources :recipes, except: [:update] do
+    member do
+      put :toggle_public
+      delete 'food/:id', to: 'recipes#destroy_food', as: :destroy_food
+    end
+  end
   get '/public_recipes', to: 'recipes#public_recipes'
 end
