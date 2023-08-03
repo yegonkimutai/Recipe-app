@@ -19,25 +19,28 @@
       <tr class="foods__table-header-row">
         <th>Food</th>
         <th>Quantity</th>
-        <th>Measurement Unit</th>
+        <%# <th>Measurement Unit</th> %>
         <th>Unit Price</th>
         <th>Actions</th>
       </tr>
       <tbody>
         <% @foods.each do |food|  %>
           <tr id="<%= dom_id food %>", class="foods__table-body-row">
-            <td><%= food.name %></td>
-            <td><%= food.quantity%></td>
-            <td><%= food.measurement_unit%></td>
-            <td><%= food.price%></td>
-            <td><%= button_to "delete", food_path(food.id), method: :delete %></td>
+             <td><%= food.name %></td>
+            <td class="p-4"><%= food.recipes_foods.select {|recipe| recipe.food_id == food.id}[0].quantity%> <%= food.measurement_unit%></td>
+            <td class="p-4">$<%= food.price%></td>
+            <% if current_user.id == @recipe.user.id%>
+            <td class="p-4">
+                <%= button_to "Remove", recipe_recipes_food_path(@recipe.id, food.id), method: :delete %>
+            </td> 
+            <% end %>
           </tr>
         <% end %>
       <tbody>
     </table>
 
   <% else %>
-    <p>No foods to show. Add a food from the button above</p>
+    <p>No Ingredients to show. Add an ingredient from the button above</p>
   <% end %>
     </div>
   </div>
