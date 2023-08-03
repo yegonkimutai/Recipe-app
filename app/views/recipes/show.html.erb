@@ -8,7 +8,11 @@
     <p>Description: <%= @recipe.desc%></p>
     <%= button_to(@recipe.public? ? "Privatize" : "Publish", toggle_public_recipe_path(@recipe), method: :put, class: "btn btn-info b-public") %>
     
-    <button class="foods__add-food-btn"><%= link_to 'Add Food', '/foods/new' %></button>
+    <% if @recipe.user_id == current_user.id %>
+      <button class="generate-shopping-list"><%= link_to "Generate Shopping List", shopping_list_path %></button>
+      <button class="add-ingredient"><%= link_to 'Add Ingredient', "/recipes/#{@recipe.id}/recipes_foods/new" %></button>
+    <% end %>
+
     </div>
     <div class="row">
     <% if @foods.length.positive?%>
@@ -16,25 +20,27 @@
       <tr class="foods__table-header-row">
         <th>Food</th>
         <th>Quantity</th>
-        <th>Measurement Unit</th>
         <th>Unit Price</th>
         <th>Actions</th>
       </tr>
       <tbody>
         <% @foods.each do |food|  %>
           <tr id="<%= dom_id food %>", class="foods__table-body-row">
-            <td><%= food.name %></td>
-            <td><%= food.quantity%></td>
-            <td><%= food.measurement_unit%></td>
-            <td><%= food.price%></td>
-            <td><%= button_to "delete", food_path(food.id), method: :delete %></td>
+             <td><%= food.name %></td>
+            <td><%= food.recipes_foods.select {|recipe| recipe.food_id == food.id}[0].quantity%> <%= food.measurement_unit%></td>
+            <td>$<%= food.price%></td>
+            <% if current_user.id == @recipe.user.id%>
+            <td>
+                <%= button_to "Remove", recipe_recipes_food_path(@recipe.id, food.id), method: :delete %>
+            </td> 
+            <% end %>
           </tr>
         <% end %>
       <tbody>
     </table>
 
   <% else %>
-    <p>No foods to show. Add a food from the button above</p>
+    <p>No Ingredients to show. Add an ingredient from the button above</p>
   <% end %>
     </div>
   </div>
