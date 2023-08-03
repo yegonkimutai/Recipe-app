@@ -13,6 +13,8 @@ Rails.application.routes.draw do
       put :toggle_public
       delete 'food/:id', to: 'recipes#destroy_food', as: :destroy_food
     end
+    resources :recipes_foods, only: %i[new create destroy]
   end
   get '/public_recipes', to: 'recipes#public_recipes'
+  # get '/recipes/:id/recipes_foods/new', to: 'recipes_foods#new'
 end
