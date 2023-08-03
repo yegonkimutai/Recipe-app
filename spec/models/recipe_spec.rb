@@ -1,15 +1,16 @@
 require 'rails_helper'
 
 RSpec.describe Food, type: :model do
-  @kay = User.new(name: 'Kay', email: 'kay2@gmail.com', password: 'Success', confirmation_sent_at: '2023-08-02 10:07:13.244302', confirmed_at: '2023-08-02 10:07:28.244302')
+  @kay = User.new(name: 'Kay', email: 'kay2@gmail.com', password: 'Success',
+                  confirmation_sent_at: '2023-08-02 10:07:13.244302', confirmed_at: '2023-08-02 10:07:28.244302')
 
   subject do
     Recipe.new(name: 'spice',
-             preparation: '1 hour',
-             cooking: '30mins',
-             desc: 'Description is here',
-             public: true,
-             user: @kay)
+               preparation: '1 hour',
+               cooking: '30mins',
+               desc: 'Description is here',
+               public: true,
+               user: @kay)
   end
 
   before { subject.save }

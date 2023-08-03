@@ -1,20 +1,21 @@
 require 'rails_helper'
 
 RSpec.describe RecipesFoods, type: :model do
-  kay = User.new(name: 'Kay', email: 'kay2@gmail.com', password: 'Success', confirmation_sent_at: '2023-08-02 10:07:13.244302', confirmed_at: '2023-08-02 10:07:28.244302')
+  kay = User.new(name: 'Kay', email: 'kay2@gmail.com', password: 'Success',
+                 confirmation_sent_at: '2023-08-02 10:07:13.244302', confirmed_at: '2023-08-02 10:07:28.244302')
 
   recipe = Recipe.new(name: 'spice',
-    preparation: '1 hour',
-    cooking: '30mins',
-    desc: 'Description is here',
-    public: true,
-    user: kay)
+                      preparation: '1 hour',
+                      cooking: '30mins',
+                      desc: 'Description is here',
+                      public: true,
+                      user: kay)
 
   food = Food.new(name: 'Chicken',
-    quantity: 2,
-    measurement_unit: 'kg',
-    price: 45,
-    user: kay)
+                  quantity: 2,
+                  measurement_unit: 'kg',
+                  price: 45,
+                  user: kay)
 
   subject do
     RecipesFoods.new(recipe_id: recipe.id, food_id: food.id, quantity: 5)

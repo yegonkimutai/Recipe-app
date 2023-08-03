@@ -2,7 +2,8 @@ require 'rails_helper'
 
 RSpec.describe Food, type: :model do
   subject do
-    kay = User.new(name: 'Kay', email: 'kay2@gmail.com', password: 'Success', confirmation_sent_at: '2023-08-02 10:07:13.244302', confirmed_at: '2023-08-02 10:07:28.244302')
+    kay = User.new(name: 'Kay', email: 'kay2@gmail.com', password: 'Success',
+                   confirmation_sent_at: '2023-08-02 10:07:13.244302', confirmed_at: '2023-08-02 10:07:28.244302')
     Food.new(name: 'Chicken',
              quantity: 2,
              measurement_unit: 'kg',
