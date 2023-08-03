@@ -1,13 +1,22 @@
 
 <h1>My Recipes</h1>
+<button type="button" class="btn btn-outline-secondary">
 <%= link_to 'Add Recipe', '/recipes/new'%>
+</button>
 
 <% if @recipes.length.positive?%>
   <% @recipes.each do |recipe|  %>
-  <div>
-    <p><%= link_to "#{recipe.name}", recipe_path(recipe.id) %></p>
-    <p><%= recipe.desc%></p>
-    <p><%= button_to "delete", recipe_path(recipe.id), method: :delete %></p>
+    <div class="container cont">
+    <div class="row">
+      <div class="col">
+      <p><%= link_to "#{recipe.name}", recipe_path(recipe.id), class: 'recipe-title' %></p>
+      <p><%= button_to "delete", recipe_path(recipe.id), method: :delete, class: "btn btn-danger" %></p>
+      </div>
+      <div class="col">
+      <p><%= recipe.desc%></p>
+      </div>
+    </div>
+  </div>
     <% end %>
   </div>
 <% else %>
