@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe User, type: :model do
-  subject { User.new(name: 'Kay', email: 'kay@gmail.com', password: 'Success', confirmation_sent_at: '2023-08-02 10:07:13.244302', confirmed_at: '2023-08-02 10:07:28.244302') }
+  subject { User.new(name: 'Kay', email: 'kay2@gmail.com', password: 'Success', confirmation_sent_at: '2023-08-02 10:07:13.244302', confirmed_at: '2023-08-02 10:07:28.244302') }
 
   before { subject.save }
 
