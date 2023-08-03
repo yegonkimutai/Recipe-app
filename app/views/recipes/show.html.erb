@@ -8,7 +8,10 @@
     <p>Description: <%= @recipe.desc%></p>
     <%= button_to(@recipe.public? ? "Privatize" : "Publish", toggle_public_recipe_path(@recipe), method: :put, class: "btn btn-info b-public") %>
     
-    <button class="foods__add-food-btn"><%= link_to 'Add Food', '/foods/new' %></button>
+    <% if @recipe.user_id == current_user.id %>
+      <button class="foods__add-food-btn"><%= link_to 'Add Food', '/foods/new' %></button>
+    <% end %>
+
     </div>
     <div class="row">
     <% if @foods.length.positive?%>
