@@ -7,6 +7,8 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find(params[:id])
+    @user = @recipe.user
+    @foods = @user.foods
   end
 
   def new
@@ -36,6 +38,12 @@ class RecipesController < ApplicationController
 
   def public_recipes
     @public_recipes = Recipe.where(public: true).order(created_at: :desc)
+  end
+
+  def toggle_public
+    @recipe = Recipe.find(params[:id])
+    @recipe.update(public: !@recipe.public)
+    redirect_to @recipe
   end
 
   private
