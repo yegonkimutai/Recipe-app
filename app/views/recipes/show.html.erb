@@ -8,7 +8,7 @@
     <p>Description: <%= @recipe.desc%></p>
     <%= button_to(@recipe.public? ? "Privatize" : "Publish", toggle_public_recipe_path(@recipe), method: :put, class: "btn btn-info b-public") %>
     
-    <button class="foods__add-food-btn"><%= link_to 'Add Food', '/recipes/_form' %></button>
+    <button class="foods__add-food-btn"><%= link_to 'Add Food', '/foods/new' %></button>
     </div>
     <div class="row">
     <% if @foods.length.positive?%>
@@ -27,7 +27,7 @@
             <td><%= food.quantity%></td>
             <td><%= food.measurement_unit%></td>
             <td><%= food.price%></td>
-            <td><%= button_to "delete", destroy_food_recipe_path(@recipe, food), method: :delete %></td>
+            <td><%= button_to "delete", food_path(food.id), method: :delete %></td>
           </tr>
         <% end %>
       <tbody>
