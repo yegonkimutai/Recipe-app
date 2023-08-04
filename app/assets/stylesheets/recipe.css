@@ -13,8 +13,12 @@
   cursor: pointer;
 }
 
-.b-public {
-  position: absolute;
-  right: 7%;
-  top: 25%;
+.generate-shopping-list,
+.add-ingredient {
+  padding: 0.7rem;
+}
+
+.shop-title {
+  gap: 1rem;
+  margin-bottom: 1rem;
 }

@@ -12,43 +12,29 @@
 
 <%= form_with path: new_recipe_path, model: @recipe, method: :post do |form| %>
 <div class="d-flex flex-column mb-3">
-  <div class="col-auto">
+  <div class="col">
   <%= form.label :name%>
   <%= form.text_field :name%>
   </div>
-  <br>
-  <div class="col-auto">
+  <div class="col">
   <%= form.label :preparation_time%>
   <%= form.text_field :preparation%>
   </div>
-  <br>
-  <div class="col-auto">
+  <div class="col">
   <%= form.label :cooking_time%>
   <%= form.text_field :cooking%>
   </div>
-  <br>
-  <div class="col-auto">
+  <div class="col">
   <%= form.label :description%>
   <%= form.text_field :desc%>
   </div>
-  <br>
+  <div class="col">
   <%= form.label :public%>
 <%= form.check_box :public%>
-<br>
+</div>
+<div class="col">
 <%= form.submit class: "btn btn-primary" %>
 </div>
+</div>
 <% end %>
-
-
-
-
-
-<br>
-
-<br>
-
-<br>
-
-<br>
-
 

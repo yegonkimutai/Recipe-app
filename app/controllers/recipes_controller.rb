@@ -2,7 +2,7 @@ class RecipesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @recipes = Recipe.where(user_id: current_user.id)
+    @recipes = Recipe.includes([:user]).where(user_id: current_user.id)
   end
 
   def show
@@ -37,7 +37,7 @@ class RecipesController < ApplicationController
   end
 
   def public_recipes
-    @public_recipes = Recipe.where(public: true).order(created_at: :desc)
+    @public_recipes = Recipe.includes(:user, :recipes_foods).where(public: true).order(created_at: :desc)
   end
 
   def toggle_public
