@@ -1,0 +1,31 @@
+
+<div class="foods-wrapper">
+  <h1>My Foods</h1>
+  <button class="foods__add-food-btn"><%= link_to 'Add Food', '/foods/new' %></button>
+
+  <% if @foods.length.positive?%>
+    <table class="foods__table">
+      <tr class="foods__table-header-row">
+        <th>Food</th>
+        <th>Quantity</th>
+        <th>Measurement Unit</th>
+        <th>Unit Price</th>
+        <th>Actions</th>
+      </tr>
+      <tbody>
+        <% @foods.each do |food|  %>
+          <tr class="foods__table-body-row">
+            <td><%= link_to "#{food.name}", food_path(food.id) %></td>
+            <td><%= food.quantity%></td>
+            <td><%= food.measurement_unit%></td>
+            <td><%= food.price%></td>
+            <td><%= button_to "delete", food_path(food.id), method: :delete %></td>
+          </tr>
+        <% end %>
+      <tbody>
+    </table>
+
+  <% else %>
+    <p>No foods to show. Add a food from the button above</p>
+  <% end %>
+</div>

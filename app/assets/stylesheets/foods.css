@@ -1,0 +1,42 @@
+/*
+INDEX
+*/
+
+.foods-wrapper {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.foods-wrapper h1 {
+  text-align: center;
+}
+
+.foods__add-food-btn {
+  padding: 0.5rem;
+  width: 8rem;
+  align-self: flex-end;
+}
+
+.foods__table {
+  border: 1px solid red;
+  margin-top: 1rem;
+  padding: 0.2rem;
+  border-collapse: collapse;
+}
+
+.foods__table-header-row {
+  background-color: #ddd;
+}
+
+.foods__table-header-row th,
+.foods__table-body-row td {
+  border: solid 1px black;
+  text-align: left;
+  padding: 0.2rem;
+}
+
+.foods__table-body-row:nth-of-type(odd) {
+  background-color: #cef5f6;
+}

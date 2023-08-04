@@ -1,0 +1,22 @@
+<h1 class="text-center">Public Recipies</h1>
+
+<% if @public_recipes.length > 0 %>
+<div>
+    <% @public_recipes.each do |recipe|%>
+        <div class="container cont">
+    <div class="row">
+      <div class="col">
+      <%= link_to "#{recipe.name}", "/recipes/#{recipe.id}", class: 'recipe-title' %>
+      <p>by: <%= recipe.user.name%><p>
+      </div>
+      <div class="col">
+      <p>Total food Items: <%= recipe.recipes_foods.length %> </p>
+      <p>Total price: $<%= recipe.total_price %></p>
+      </div>
+    </div>
+  </div>
+    <% end %>
+ </div>
+<% else %>
+    <h1> No Public Recipies</h1>
+<% end %>

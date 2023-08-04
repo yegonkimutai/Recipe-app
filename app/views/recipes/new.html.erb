@@ -1,0 +1,40 @@
+<h1>Add new recipe</h1>
+<% if @recipe.errors.any? %>
+  <div class="post-errors-box">
+    <p><%= pluralize(@recipe.errors.count, "error") %> found:</p>
+
+    <ul class="recipe-errors-ul">
+      <% @recipe.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+<% end %>
+
+<%= form_with path: new_recipe_path, model: @recipe, method: :post do |form| %>
+<div class="d-flex flex-column mb-3">
+  <div class="col">
+  <%= form.label :name%>
+  <%= form.text_field :name%>
+  </div>
+  <div class="col">
+  <%= form.label :preparation_time%>
+  <%= form.text_field :preparation%>
+  </div>
+  <div class="col">
+  <%= form.label :cooking_time%>
+  <%= form.text_field :cooking%>
+  </div>
+  <div class="col">
+  <%= form.label :description%>
+  <%= form.text_field :desc%>
+  </div>
+  <div class="col">
+  <%= form.label :public%>
+<%= form.check_box :public%>
+</div>
+<div class="col">
+<%= form.submit class: "btn btn-primary" %>
+</div>
+</div>
+<% end %>
+

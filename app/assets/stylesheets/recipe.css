@@ -1,0 +1,24 @@
+.cont {
+  margin: 2rem;
+  border: 2px solid;
+}
+
+.col {
+  padding: 1rem;
+}
+
+.recipe-title {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+
+.generate-shopping-list,
+.add-ingredient {
+  padding: 0.7rem;
+}
+
+.shop-title {
+  gap: 1rem;
+  margin-bottom: 1rem;
+}

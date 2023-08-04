@@ -1,0 +1,34 @@
+<h1>Add new food</h1>
+<% if @food.errors.any? %>
+  <div class="post-errors-box">
+    <p><%= pluralize(@food.errors.count, "error") %> found:</p>
+
+    <ul class="food-errors-ul">
+      <% @food.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+<% end %>
+
+<%= form_with path: new_food_path, model: @food, method: :post do |form| %>
+  <div class="d-flex flex-column mb-3">
+  <div class="col">
+  <%= form.label :name%>
+  <%= form.text_field :name%>
+  </div>
+  <div class="col">
+  <%= form.label :measurement_unit%>
+  <%= form.text_field :measurement_unit%>
+  </div>
+  <div class="col">
+  <%= form.label :price%>
+  <%= form.text_field :price%>
+  </div>
+  <div class="col">
+  <%= form.label :quantity%>
+  <%= form.number_field :quantity%>
+  </div>
+  <div class="col">
+  <%= form.submit class: "btn btn-primary" %>
+</div>
+<% end %>
