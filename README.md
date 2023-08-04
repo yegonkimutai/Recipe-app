@@ -4,18 +4,22 @@
 
 # 📗 Table of Contents
 
-- [📖 About the Project](#about-project)
-  - [🛠 Built With](#built-with)
-- [💻 Getting Started](#getting-started)
-  - [Setup](#setup)
-  - [Prerequisites](#prerequisites)
-  - [Run tests](#run-tests)
-- [👥 Authors](#authors)
-- [🔭 Future Features](#future-features)
-- [🤝 Contributing](#contributing)
-- [⭐️ Show your support](#support)
-- [🙏 Acknowledgements](#acknowledgements)
-- [📝 License](#license)
+- [� Table of Contents](#-table-of-contents)
+- [📖 Recipe-app ](#-recipe-app-)
+  - [🛠 Built With ](#-built-with-)
+  - [Key Features](#key-features)
+  - [💻 Getting Started ](#-getting-started-)
+    - [Prerequisites](#prerequisites)
+    - [Setup](#setup)
+    - [Install](#install)
+    - [Usage](#usage)
+    - [Run tests](#run-tests)
+  - [👥 Authors ](#-authors-)
+  - [🔭 Future Features ](#-future-features-)
+  - [🤝 Contributing ](#-contributing-)
+  - [⭐️ Show your support ](#️-show-your-support-)
+  - [🙏 Acknowledgments ](#-acknowledgments-)
+  - [📝 License ](#-license-)
 
 <!-- PROJECT DESCRIPTION -->
 
@@ -103,6 +107,12 @@ rubocop -A
 - GitHub: [@yegonkimutai](https://github.com/yegonkimutai)
 - Twitter: [@yegonbrian8](https://twitter.com/yegonbrian8)
 - LinkedIn: [brian-yegon](https://www.linkedin.com/in/brian-yegon-0717a1241/)
+
+👤 **Samuel Kwesi Obuobi Lartey**
+
+- GitHub: [@kwesi obuobi](https://github.com/kwesiObuobi)
+- Twitter: [@kwesi_obuobi](https://twitter.com/kwesi_obuobi)
+- LinkedIn: [kwesi-obuobi](https://www.linkedin.com/in/kwesi-obuobi/)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
