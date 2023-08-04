@@ -1,10 +1,20 @@
-<h1><%= @recipe.name%></h1>
+<h1 class="text-center"><%= @recipe.name%></h1>
 
 <div class="container">
   <div class="row">
     <div class="row">
     <div class="d-flex justify-content-end">
-    <%= button_to(@recipe.public? ? "Privatize" : "Publish", toggle_public_recipe_path(@recipe), method: :put, class: "btn btn-info b-public") %>
+      <% if @recipe.user_id == current_user.id %>
+        <h4 class="m-2">Public</h4>
+        <%= button_to toggle_public_recipe_path(@recipe), method: :put do %>
+          <% if @recipe.public %>
+            <i class="fa fa-toggle-on" style="font-size:40px;color:green"></i>
+          <% else %>
+            <i class="fa fa-toggle-off" style="font-size:40px;color:green"></i>
+          <% end %>
+        <% end %>
+
+      <% end %>
     </div>
     <p>Preparation time: <%= @recipe.preparation%></p>
     <p>Cooking time: <%= @recipe.cooking%></p>

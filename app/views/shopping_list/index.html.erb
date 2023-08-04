@@ -1,4 +1,4 @@
-<h1>Shopping List</h1>
+<h1 class="text-center">Shopping List</h1>
 <div class="container">
 <div class="row">
 <div class="d-flex justify-content-center shop-title">
@@ -23,8 +23,16 @@
   <tbody>
     <% @recipes_foods.each_with_index do | recipe,index|%>
       <tr class="foods__table-body-row">
-        <td><%= recipe.food.name %> (<%= recipe.food.quantity %>)</td>
-        <td><%= recipe.quantity - recipe.food.quantity %> <%= recipe.food.measurement_unit %></td>
+        <td><%= recipe.food.name %></td>
+
+        <% if recipe.food.user_id == current_user.id %>
+          <td><%= recipe.quantity - recipe.food.quantity %> <%= recipe.food.measurement_unit %></td>
+        <% else %>
+          <td><%= recipe.quantity %> <%= recipe.food.measurement_unit %></td>
+        <% end %>
+        
+        
+        
         <td>$<%= recipe.food.price %></td>
         <td>$<%= recipe.food.price.to_i * (recipe.quantity - recipe.food.quantity) %></td>
       </tr>
