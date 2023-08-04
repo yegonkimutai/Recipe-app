@@ -1,12 +1,16 @@
 <h1>Shopping List</h1>
-<div>
+<div class="container">
+<div class="row">
+<div class="d-flex justify-content-center shop-title">
   <span>
     Amount of food items to buy: <span><%= @recipes_foods.length %></span>
   </span>
   <span>
     Total value of food needed: <span>$<%= @recipes_foods.map {|r| r.food.price * (r.quantity - r.food.quantity) }.sum %></span>
   </span>
+  </div>
 </div>
+<div class="row">
 <table class="food__tabel">
   <thead>
     <tr class="foods__table-header-row">
@@ -27,3 +31,5 @@
     <% end %>
   </tbody>
 </table>
+</div>
+</div>

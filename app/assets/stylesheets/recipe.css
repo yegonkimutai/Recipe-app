@@ -17,3 +17,8 @@
 .add-ingredient {
   padding: 0.7rem;
 }
+
+.shop-title {
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
