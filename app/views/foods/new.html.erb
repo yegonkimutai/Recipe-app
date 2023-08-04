@@ -11,16 +11,24 @@
 <% end %>
 
 <%= form_with path: new_food_path, model: @food, method: :post do |form| %>
-<%= form.label :name%>
-<%= form.text_field :name%>
-<br>
-<%= form.label :measurement_unit%>
-<%= form.text_field :measurement_unit%>
-<br>
-<%= form.label :price%>
-<%= form.text_field :price%>
-<br>
-<%= form.label :quantity%>
-<%= form.number_field :quantity%>
-<%= form.submit %>
+  <div class="d-flex flex-column mb-3">
+  <div class="col">
+  <%= form.label :name%>
+  <%= form.text_field :name%>
+  </div>
+  <div class="col">
+  <%= form.label :measurement_unit%>
+  <%= form.text_field :measurement_unit%>
+  </div>
+  <div class="col">
+  <%= form.label :price%>
+  <%= form.text_field :price%>
+  </div>
+  <div class="col">
+  <%= form.label :quantity%>
+  <%= form.number_field :quantity%>
+  </div>
+  <div class="col">
+  <%= form.submit class: "btn btn-primary" %>
+</div>
 <% end %>
