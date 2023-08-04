@@ -4,7 +4,7 @@
 
 # 📗 Table of Contents
 
-- [� Table of Contents](#-table-of-contents)
+- [📗 Table of Contents](#-table-of-contents)
 - [📖 Recipe-app ](#-recipe-app-)
   - [🛠 Built With ](#-built-with-)
   - [Key Features](#key-features)
@@ -121,7 +121,8 @@ rubocop -A
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] More complex ruby commands and functionality.
+- [ ] Add a shopping cart feature.
+- [ ] Allow real-time communication/chatting between users.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
