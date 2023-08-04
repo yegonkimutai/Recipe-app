@@ -3,14 +3,18 @@
 <div class="container">
   <div class="row">
     <div class="row">
+    <div class="d-flex justify-content-end">
+    <%= button_to(@recipe.public? ? "Privatize" : "Publish", toggle_public_recipe_path(@recipe), method: :put, class: "btn btn-info b-public") %>
+    </div>
     <p>Preparation time: <%= @recipe.preparation%></p>
     <p>Cooking time: <%= @recipe.cooking%></p>
     <p>Description: <%= @recipe.desc%></p>
-    <%= button_to(@recipe.public? ? "Privatize" : "Publish", toggle_public_recipe_path(@recipe), method: :put, class: "btn btn-info b-public") %>
     
     <% if @recipe.user_id == current_user.id %>
-      <button class="generate-shopping-list"><%= link_to "Generate Shopping List", shopping_list_path %></button>
+    <div class="d-flex justify-content-between">
+    <button class="generate-shopping-list"><%= link_to "Generate Shopping List", shopping_list_path %></button>
       <button class="add-ingredient"><%= link_to 'Add Ingredient', "/recipes/#{@recipe.id}/recipes_foods/new" %></button>
+    </div>
     <% end %>
 
     </div>
