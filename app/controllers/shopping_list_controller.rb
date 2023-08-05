@@ -1,5 +1,6 @@
 class ShoppingListController < ApplicationController
   def index
+    # @recipes = current_user.recipes.includes(recipes_foods: :food)
     @recipes = current_user.recipes.includes(recipes_foods: :food)
     @all_recipes_foods = @recipes.map(&:recipes_foods).flatten
 
