@@ -85,7 +85,5 @@ test:
 #
 production:
   <<: *default
-  database: recipe
-  username: postgres
-  password: Yegon@99
+  url: <%= ENV['DATABASE_URL'] %>
 
